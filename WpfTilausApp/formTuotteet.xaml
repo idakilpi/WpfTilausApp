@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfTilausApp.formTuotteet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTilausApp"
+        mc:Ignorable="d"
+        Title="formTuotteet" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dgTuotteet" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="358" Margin="10,10,0,0" VerticalAlignment="Top" Width="534" SelectionChanged="DgTuotteet_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=TuoteID}" Header="Tuotekoodi"/>
+                <DataGridTextColumn Binding="{Binding Path=Nimi}" Header="Nimi"  Width="*" />
+                <DataGridTextColumn Binding="{Binding Path=Ahinta, StringFormat=\{0:##.#####\}}" Header="Hinta/kpl" />
+                <DataGridTextColumn Binding="{Binding Path=Kuva, StringFormat={}{0:F1}}" Header="Kuva" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnSulje" Content="Sulje" HorizontalAlignment="Left" Height="30" Margin="558,348,0,0" VerticalAlignment="Top" Width="86" Click="BtnSulje_Click"/>
+        <TextBox x:Name="txtAhinta" HorizontalAlignment="Left" Height="35" Margin="558,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"/>
+        <TextBox x:Name="txtTuoteNimi" HorizontalAlignment="Left" Height="25" Margin="558,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="213"/>
+        <Button x:Name="btnTallenna" Content="Tallenna" HorizontalAlignment="Left" Margin="558,305,0,0" VerticalAlignment="Top" Width="86" Height="28" Click="BtnTallenna_Click"/>
+        <Button x:Name="btnLisaa" Content="Lisää" HorizontalAlignment="Left" Height="29" Margin="558,261,0,0" VerticalAlignment="Top" Width="86" Click="BtnLisaa_Click"/>
+        <Button x:Name="btnPoista" Content="Poista" HorizontalAlignment="Left" Height="26" Margin="558,221,0,0" VerticalAlignment="Top" Width="86" Click="BtnPoista_Click"/>
+        <TextBox x:Name="txtTuoteID" HorizontalAlignment="Left" Height="23" Margin="558,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86"/>
+        <Button x:Name="btnMuokkaa" Content="Muokkaa" HorizontalAlignment="Left" Height="32" Margin="558,174,0,0" VerticalAlignment="Top" Width="86" Click="BtnMuokkaa_Click"/>
+        <Label x:Name="lblOhje" Content="Valitse Lisää painike ja lisää uusi tuote &#xD;&#xA;ja Tallenna" HorizontalAlignment="Left" Height="52" Margin="558,10,0,0" VerticalAlignment="Top" Width="226"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,54 @@
+﻿<Window x:Class="WpfTilausApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTilausApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="596.24" Width="1033.094">
+    <Grid>
+        <Rectangle x:Name="recLower" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="272" Margin="8,220,0,0" Stroke="Black" VerticalAlignment="Top" Width="1008" Grid.ColumnSpan="2"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="178" Margin="10,22,0,0" Stroke="Black" VerticalAlignment="Top" Width="1008" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.068"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.599"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Label x:Name="lblTilausNumero" Content="Tilausnumero" HorizontalAlignment="Left" Height="35" Margin="23,22,0,0" VerticalAlignment="Top" Width="114"/>
+        <TextBox x:Name="txtTilausNumero" HorizontalAlignment="Left" Height="42" Margin="20,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+        <ComboBox x:Name="cbAsiakas" HorizontalAlignment="Left" Height="42" Margin="163,49,0,0" VerticalAlignment="Top" Width="292" DropDownClosed="CbAsiakas_DropDownClosed"/>
+        <Label x:Name="lblAsiakas" Content="Valitse asiakas listalta" HorizontalAlignment="Left" Height="28" Margin="133,22,0,0" VerticalAlignment="Top" Width="162"/>
+        <TextBox x:Name="txtAsiakasNumero" HorizontalAlignment="Left" Height="42" Margin="478,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107" />
+        <Button x:Name="btnTallenna" Content="Tallenna tilaus" HorizontalAlignment="Left" Height="52" Margin="848,126,0,0" VerticalAlignment="Top" Width="115" Click="BtnTallenna_Click"/>
+        <TextBox x:Name="txtToimitusAika" HorizontalAlignment="Left" Height="39" Margin="362,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" RenderTransformOrigin="2.556,0.775"/>
+        <TextBox x:Name="txtAsiakasOsoite" HorizontalAlignment="Left" Height="41" Margin="590,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258"/>
+        <DataGrid x:Name="dgTilausRivit" HorizontalAlignment="Center" Height="172" Margin="0,310,0,0" VerticalAlignment="Top" Width="988"/>
+        <ComboBox x:Name="cbTuote" HorizontalAlignment="Left" Height="44" Margin="23,255,0,0" VerticalAlignment="Top" Width="280" DropDownClosed="CbTuote_DropDownClosed"/>
+        <TextBox x:Name="txtTuoteNumero" HorizontalAlignment="Left" Height="42" Margin="351,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <TextBox x:Name="txtAHinta" HorizontalAlignment="Left" Height="42" Margin="492,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
+        <TextBox x:Name="txtMaara" HorizontalAlignment="Left" Height="42" Margin="594,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" LostFocus="TxtMaara_LostFocus"/>
+        <DatePicker x:Name="dpTilausPvm" HorizontalAlignment="Left" Height="40" Margin="30,135,0,0" VerticalAlignment="Top" Width="144" FirstDayOfWeek="Monday" RenderTransformOrigin="-0.181,0.5"/>
+        <DatePicker x:Name="dpToimitusPvm" HorizontalAlignment="Left" Height="40" Margin="186,137,0,0" VerticalAlignment="Top" Width="144" FirstDayOfWeek="Monday"/>
+        <Button x:Name="btnLisaaRivi" Content="Lisää rivi" HorizontalAlignment="Left" Height="42" Margin="850,256,0,0" VerticalAlignment="Top" Width="113" Click="BtnLisaaRivi_Click"/>
+        <TextBox x:Name="txtRiviSumma" HorizontalAlignment="Left" Height="42" Margin="712,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83"/>
+        <TextBox x:Name="txtTilausSumma" HorizontalAlignment="Left" Height="38" Margin="594,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"/>
+        <Label x:Name="lblTuotekoodi" Content="Tuote ja tuotekoodi" HorizontalAlignment="Left" Height="36" Margin="23,220,0,0" VerticalAlignment="Top" Width="252"/>
+        <Label x:Name="lblTuotenro" Content="Tuotenro" HorizontalAlignment="Left" Height="36" Margin="351,222,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label x:Name="lblMäärä" Content="Määrä" HorizontalAlignment="Left" Height="41" Margin="594,220,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label x:Name="lblHinta" Content="A-Hinta" HorizontalAlignment="Left" Height="36" Margin="492,225,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label x:Name="lblSumma" Content="Summa" HorizontalAlignment="Left" Height="36" Margin="713,220,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label x:Name="lblAsiakasnro" Content="Asiakasnro" HorizontalAlignment="Left" Height="23" Margin="474,22,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label x:Name="lblToimitusaika" Content="Toimitusaika" HorizontalAlignment="Left" Height="35" Margin="362,96,0,0" VerticalAlignment="Top" Width="116"/>
+        <Label x:Name="lblTilaussumma" Content="Tilausten yhteissumma" HorizontalAlignment="Left" Height="35" Margin="594,99,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="lblAsiakasosoite" Content="Asiakkaan osoite" HorizontalAlignment="Left" Height="24" Margin="594,22,0,0" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="txtPostinro" HorizontalAlignment="Left" Height="42" Margin="853,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="lblPostinro" Content="Postinro" HorizontalAlignment="Left" Height="23" Margin="853,25,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="BtnPostitoimiPaikat" Content="Postitoimipaikat" HorizontalAlignment="Left" Height="60" Margin="8,495,0,0" VerticalAlignment="Top" Width="145" Click="BtnPostitoimiPaikat_Click"/>
+        <Button x:Name="BtnTuotteet" Content="Tuotteet" HorizontalAlignment="Left" Height="60" Margin="170,497,0,0" VerticalAlignment="Top" Width="145" Click="BtnTuotteet_Click"/>
+        <Button x:Name="BtnSulje" Content="Sulje" HorizontalAlignment="Left" Height="58" Margin="850,497,0,0" VerticalAlignment="Top" Width="166" Click="BtnSulje_Click"/>
+    </Grid>
+</Window>
